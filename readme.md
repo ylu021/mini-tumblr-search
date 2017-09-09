@@ -13,12 +13,25 @@
 ```
   {
     loaders: [
-      'style?sourceMap',
-      'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-      'resolve-url',
+      'style-loader?sourceMap',
+      'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
       'postcss-loader?sourceMap',
-      'sass?sourceMap'
+      'sass-loader?sourceMap'
     ],
     test: /\.scss$/
   }
 ```
+
+# set up eslint
+* install eslint, mailonline etc
+* create .eslintrc.json and add mailonline properties
+* install stylelint and webpack plugins
+
+```
+{
+        "extends": ["mailonline", "mailonline/react"],
+        "root": true
+}
+```
+
+# install react

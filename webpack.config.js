@@ -1,4 +1,5 @@
 const path = require('path');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   devServer: {
@@ -21,11 +22,10 @@ module.exports = {
       },
       {
         loaders: [
-          'style?sourceMap',
-          'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-          'resolve-url',
+          'style-loader?sourceMap',
+          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
           'postcss-loader?sourceMap',
-          'sass?sourceMap'
+          'sass-loader?sourceMap'
         ],
         test: /\.scss$/
       }
@@ -34,5 +34,11 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.join(__dirname, 'dist')
-  }
+  },
+  plugins: [
+    new StyleLintPlugin({
+      files: ['**/*.s?(a|c)ss'],
+      syntax: 'scss'
+    })
+  ]
 };
