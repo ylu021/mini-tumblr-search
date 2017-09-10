@@ -43,4 +43,23 @@
 
 # implement tests
 * install babel-jest jest identity-obj-proxy enzyme react-test-renderer
-> obj-proxy stringify css-modules, so it is able to process by tests 
+> obj-proxy stringify css-modules, so it is able to process by tests
+
+### testing apis
+* using nock to fake an http request
+### testing sagas and actions
+* start by importing the actions, apis and saga commands call put etc
+* create a mock response
+* create a const action
+* instantiate iterator from generator func(s)
+* using next().value to test the expected match func or values (can pass in mockvalues as well, like next(mockvalues))
+
+### testing reducers
+* create a mockResponse
+* import initialState and actions
+* vary the initialState for each different condition
+* testing the expected match of reducers func attributes
+
+```
+newstate = reducerfunction(state, action)
+```
