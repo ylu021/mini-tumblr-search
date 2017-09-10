@@ -40,5 +40,8 @@ module.exports = {
       files: ['**/*.s?(a|c)ss'],
       syntax: 'scss'
     })
-  ]
+  ],
+  node: {
+    fs: 'empty'
+  }
 };
