@@ -34,4 +34,13 @@
 }
 ```
 
-# install react
+# implement react and redux
+* install react and babel-preset-react
+
+* install redux and redux-saga
+* install babel dependencies for generators
+* create actions, reducers, store
+
+# implement tests
+* install babel-jest jest identity-obj-proxy enzyme react-test-renderer
+> obj-proxy stringify css-modules, so it is able to process by tests 
