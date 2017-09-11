@@ -1,9 +1,4 @@
 import path from 'path';
-import {config} from 'dotenv';
-
-config({
-  path: path.resolve('../../.env')
-});
 
 export const searchImg = async (query) => {
   const token = process.env.ACCESS_TOKEN;
@@ -19,8 +14,16 @@ export const searchImg = async (query) => {
     throw err;
   }
 
-  return data.response.map(({short_url, photos}) => ({
-    link: short_url,
-    image: photos[0].original_size.url
-  }));
+  const filteredOnlyPhotos = data.response.filter(
+    ({photos}) => photos
+  ).map(
+    // eslint-disable-next-line id-match
+    ({id, short_url, photos}) => ({
+      id,
+      url: short_url,
+      image: photos[0].original_size.url
+    })
+  );
+
+  return filteredOnlyPhotos;
 };

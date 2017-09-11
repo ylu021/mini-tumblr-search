@@ -8,7 +8,8 @@
     "build": "webpack -p",
     "start": "webpack-dev-server",
     "lint": "eslint --ignore-path .gitignore '**/*.js'",
-    "test": "jest"
+    "test": "jest",
+    "updatetest": "jest --updateSnapshot"
   },
   "author": "",
   "license": "ISC",
@@ -52,7 +53,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "dotenv-webpack": "^1.5.4"
   },
   "jest": {
     "collectCoverageFrom": [

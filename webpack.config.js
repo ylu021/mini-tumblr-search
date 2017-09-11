@@ -1,5 +1,6 @@
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   devServer: {
@@ -31,6 +32,9 @@ module.exports = {
       }
     ]
   },
+  node: {
+    fs: 'empty'
+  },
   output: {
     filename: '[name].js',
     path: path.join(__dirname, 'dist')
@@ -39,9 +43,10 @@ module.exports = {
     new StyleLintPlugin({
       files: ['**/*.s?(a|c)ss'],
       syntax: 'scss'
+    }),
+    new Dotenv({
+      path: './.env',
+      safe: false
     })
-  ],
-  node: {
-    fs: 'empty'
-  }
+  ]
 };

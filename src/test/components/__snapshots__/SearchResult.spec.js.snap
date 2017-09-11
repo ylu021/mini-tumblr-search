@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchResult /> should correctly renders loading at fetching state 1`] = `
+<p>
+  Loading
+</p>
+`;
+
+exports[`<SearchResult /> should correctly renders null when no posts are find 1`] = `<p />`;
+
+exports[`<SearchResult /> should correctly renders the posts 1`] = `
+<div>
+  <h1>
+    Image result from Tumblr
+  </h1>
+  <ul>
+    <li>
+      <img
+        src="http://image.jpg"
+      />
+      <a
+        href="http://tumblritem.com/item/1"
+        target="_blank"
+      >
+        source
+      </a>
+    </li>
+    <li>
+      <img
+        src="http://image2.jpg"
+      />
+      <a
+        href="http://tumblritem.com/item/2"
+        target="_blank"
+      >
+        source
+      </a>
+    </li>
+  </ul>
+</div>
+`;

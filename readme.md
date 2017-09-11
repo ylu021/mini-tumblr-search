@@ -63,3 +63,8 @@
 ```
 newstate = reducerfunction(state, action)
 ```
+
+### creating views
+- a search input
+- a submit button
+- search result list
