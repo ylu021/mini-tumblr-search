@@ -64,7 +64,11 @@
 newstate = reducerfunction(state, action)
 ```
 
-### creating views
+### creating views and snapshots tests
 - a search input
 - a submit button
 - search result list
+
+### adding styles
+- using css modules
+- using loading.io icon for loading

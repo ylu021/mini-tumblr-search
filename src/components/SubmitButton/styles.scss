@@ -1,0 +1,13 @@
+.submitbutton {
+  background: tomato;
+  border: none;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: large;
+  color: white;
+  border-radius: 0 0.5rem 0.5rem 0;
+
+  &:disabled {
+    background: gray;
+  }
+}

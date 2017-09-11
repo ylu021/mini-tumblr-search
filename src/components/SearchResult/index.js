@@ -1,32 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
+import styles from './styles.scss';
 
 const SearchResult = ({posts, fetching}) => {
   if (fetching) {
-    return <p>Loading</p>;
+    return <div><img src='https://loading.io/spinners/ellipsis/index.discuss-ellipsis-preloader.svg' /></div>;
   }
 
   if (!posts) {
-    return <p />;
+    return <p className={styles.info}>Try a search above to see recent tumblr posts</p>;
   }
 
   return (
-    <div>
-      <h1>Image result from Tumblr</h1>
-      <ul>
+    <div className={styles.container}>
+      <ul className={styles.resultcontainer}>
         {
-          posts.map(({id, image, url}) =>
-            <li key={id}>
-              <img src={image} />
-              <a
-                href={url}
-                target='_blank'
+          posts.map(({id, image, url}, idx) => {
+            const images = image.map((img, idx) =>
+              <li
+                className={styles.resultitem}
+                key={id + idx}
               >
-                {'source'}
-              </a>
-            </li>
-          )
+                <a
+                  className={styles.source}
+                  href={url}
+                  target='_blank'
+                >
+                  <div
+                    className={styles.imgcontainer}
+                    key={'img' + idx}
+                  >
+                    <img className={styles.img} src={img.original_size.url} />
+                  </div>
+                </a>
+              </li>
+            );
+
+            return images;
+          })
         }
       </ul>
     </div>

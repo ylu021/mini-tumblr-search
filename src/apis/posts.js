@@ -21,7 +21,7 @@ export const searchImg = async (query) => {
     ({id, short_url, photos}) => ({
       id,
       url: short_url,
-      image: photos[0].original_size.url
+      image: photos
     })
   );
 

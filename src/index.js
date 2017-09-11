@@ -14,9 +14,9 @@ const store = configureStore();
 
 render(
   <Provider store={store}>
-    <div className={styles.container}>
-      <SearchInput />
-      <SearchResult />
+    <div>
+      <div className={styles.inputcontainer}><SearchInput /></div>
+      <div className={styles.searchresultcontainer}><SearchResult /></div>
     </div>
   </Provider>,
   document.querySelector('[data-react-app]')

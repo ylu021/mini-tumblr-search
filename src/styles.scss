@@ -1,4 +1,24 @@
-.container {
-  padding: 16px;
-  background: red;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro');
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+.inputcontainer {
+  padding: 10% 5%;
+  background: #f6f6f6;
+  text-align: center;
+}
+
+.searchresultcontainer {
+  padding: 0.5rem 5%;
+  background: white;
+  text-align: center;
 }
